@@ -54,7 +54,7 @@ function draw() {
 
         player.velocityY += 0.5;
 
-        if(keyDown("space") && player.y > windowHeight-74){
+        if ((keyDown("space") || touches.length > 0) && player.y > windowHeight - 74) {
             player.velocityY = -12;
         }
 
@@ -84,7 +84,7 @@ function draw() {
         text("Game Over",(windowWidth/2)-30,(windowHeight/2)-20);
         text("Press 'r' to resart",(windowWidth/2)-50,windowHeight/2);
 
-        if(keyDown("r")){
+        if((keyDown("r") || touches.length > 0)){
             gameState = "play"
             obstacleGroup.destroyEach();
             ground.velocityX = -4;
